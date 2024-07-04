@@ -1,0 +1,211 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  :root {
+    --clr-1: #1c1c1c;
+    --clr-2: #4b0c52;
+    --clr-3: #7c2484;
+    --clr-4: #284ea1;
+    --clr-5: #3d8b81;
+  }
+
+body {
+    color: #fff;
+    background-color: black;
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#flex-container {
+    display: flex;
+    padding: 0 25px 25px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.content-container {
+    max-width: 750px;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
+
+.title h1 span, .title h2 span, .section-title h1 span {
+    color: #383838;
+}
+
+.section-title h1 {
+    font-size: 32px !important;
+}
+
+h1 {
+    font-size: 48px;
+    margin-block-start: 0;
+    margin-block-end: 0.4em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.detail {
+    color: #ededed;
+    font-size: 0.9em;
+}
+
+h2 {
+    color: #383838;
+    font-size: 32px;
+    margin-block-start: 0;
+    margin-block-end: 0.4em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#content {
+    max-width: 750px;
+    width: 100%;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+li .col {
+    color: #383838;
+}
+
+.slide {
+    display: block;
+    margin: 8px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.hl {
+    color: #486cb9;
+}
+
+#github-link {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px dashed #fff;
+}
+
+.glide__arrows {
+    display: flex;
+    justify-content: space-between;
+}
+
+.proj-desc {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 12px;
+}
+
+.projects {
+    position: relative;
+    background: var(--clr-1);
+    border: 1px solid #383838;
+    border-radius: 8px;
+    margin: 16px 0 16px;
+    padding: 12px;
+}
+
+.glide__arrow {
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    border: 3px solid #383838;
+    border-radius: 8px;
+    flex: 50%;
+    height: 42px;
+    margin: 8px;
+}
+
+.glide__arrow:hover {
+    background-color: rgb(18, 18, 18);
+    border: 3px solid #5e5e5e;
+    cursor: pointer;
+}
+
+.projects::before,
+.projects::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(from var(--gradient-angle), var(--clr-3), var(--clr-4), var(--clr-5), var(--clr-4), var(--clr-3));
+  border-radius: inherit;
+  -webkit-animation: rotation 5s linear infinite;
+          animation: rotation 5s linear infinite;
+}
+
+.projects::after {
+  filter: blur(3.5rem);
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
